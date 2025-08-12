@@ -10,6 +10,9 @@ alert(nombre);
 // Un pop-up en ventana
 window.alert(numero);
 
+// console.log para meterlos en la consola en vez de la alerta. EL usuario ve las alertas pero solo el dev ve la consola
+console.log(nombre);
+
 //Similar a input en python, para guardar info en la variable
 var tuNombre = prompt("¿Cómo te llamas?");
 
