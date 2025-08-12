@@ -7,8 +7,8 @@ window.onload = function(){
     let dado1 = rollDice();
     let dado2 = rollDice();
 
-    document.getElementById("dado1").src = "images/dice${dado1}.png"
-    document.getElementById("dado2").src = "images/dice${dado2}.png"
+    document.getElementById("dado1").src = `/diceGameProject/images/dice${dado1}.png`;
+    document.getElementById("dado2").src = `/diceGameProject/images/dice${dado2}.png`;
 
 
     let textoResultado;
