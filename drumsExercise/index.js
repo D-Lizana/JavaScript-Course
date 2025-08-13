@@ -7,18 +7,23 @@ for(var i=0; i<numeroTambores; i++){
 
         let buttonInnerHTML = this.innerHTML;
         hacerRuido(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
 
 
     });
 
+}
 
-    document.addEventListener("keydown", function(event){
-        hacerRuido(event.key);
-    })
+document.addEventListener("keydown", function(event){
+        if(!event.repeat){
+            hacerRuido(event.key);
+        buttonAnimation(event.key);
+        }
+});
 
 
 
-    function hacerRuido(key){
+function hacerRuido(key){
         
         switch(key){
             case "w":
@@ -59,9 +64,15 @@ for(var i=0; i<numeroTambores; i++){
             default: console.log("Fallo")
 
         }
-    }
+};    
 
 
 
+function buttonAnimation(currentKey){
 
-}
+        let botonActivo = document.querySelector("."+currentKey);
+        if(botonActivo){
+            botonActivo.classList.add("pressed");
+            setTimeout(function(){botonActivo.classList.remove("pressed");},100)
+        }
+};

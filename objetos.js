@@ -22,3 +22,17 @@ function Animal(especie,nombre,gordito,sitiosDormir){
 // Para crear una instancia del objeto
 
 let Animal1 = new Animal("Gato", "Lusis", true, ["Sofá"]);
+
+
+// metodos en js:
+
+function Animal(especie,nombre,gordito,sitiosDormir){
+    this.especie = especie;
+    this.nombre = nombre;
+    this.gordito = gordito;
+    this.sitiosDormir = sitiosDormir;
+    // Se añade el metodo directamente como una funcion
+    this.caminar = function(distancia){
+        console.log("Camina "+distancia+" kilometros");
+    }
+}
