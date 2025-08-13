@@ -6,8 +6,21 @@ for(var i=0; i<numeroTambores; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
 
         let buttonInnerHTML = this.innerHTML;
+        hacerRuido(buttonInnerHTML);
 
-        switch(buttonInnerHTML){
+
+    });
+
+
+    document.addEventListener("keydown", function(event){
+        hacerRuido(event.key);
+    })
+
+
+
+    function hacerRuido(key){
+        
+        switch(key){
             case "w":
                 var tom1 = new Audio("sounds/tom-1.mp3");
                 tom1.play();
@@ -46,7 +59,9 @@ for(var i=0; i<numeroTambores; i++){
             default: console.log("Fallo")
 
         }
+    }
 
 
-    });
+
+
 }
