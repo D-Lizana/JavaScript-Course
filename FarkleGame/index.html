@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farkle - 2 Jugadores</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farkle - 2 Jugadores</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+
+    <header>
+        <h1>🎲 Farkle</h1>
+    </header>
+
+    <main>
+        <!-- Panel de jugadores -->
+        <section class="players">
+        <div class="player" id="player1">
+            <h2>Jugador 1</h2>
+            <p>Puntos: <span class="score">0</span></p>
+        </div>
+        <div class="player" id="player2">
+            <h2>Jugador 2</h2>
+            <p>Puntos: <span class="score">0</span></p>
+        </div>
+        </section>
+
+        <!-- Zona central de juego -->
+        <section class="game-area">
+        <div class="dice-container">
+            <!-- Los dados aparecerán aquí -->
+            <img src="images/dice1.png" alt="Dado 1" class="dice">
+            <img src="images/dice2.png" alt="Dado 2" class="dice">
+            <img src="images/dice3.png" alt="Dado 3" class="dice">
+            <img src="images/dice4.png" alt="Dado 4" class="dice">
+            <img src="images/dice5.png" alt="Dado 5" class="dice">
+            <img src="images/dice6.png" alt="Dado 6" class="dice">
+        </div>
+
+        <div class="controls">
+            <button id="roll">🎲 Tirar Dados</button>
+            <button id="hold">✅ Plantarse</button>
+        </div>
+
+        <p class="message">Turno del Jugador 1</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Farkle - Proyecto Web</p>
+    </footer>
+
+
+
     <script src="script.js"></script>
 
-  <header>
-    <h1>🎲 Farkle</h1>
-  </header>
-
-  <main>
-    <!-- Panel de jugadores -->
-    <section class="players">
-      <div class="player" id="player1">
-        <h2>Jugador 1</h2>
-        <p>Puntos: <span class="score">0</span></p>
-      </div>
-      <div class="player" id="player2">
-        <h2>Jugador 2</h2>
-        <p>Puntos: <span class="score">0</span></p>
-      </div>
-    </section>
-
-    <!-- Zona central de juego -->
-    <section class="game-area">
-      <div class="dice-container">
-        <!-- Los dados aparecerán aquí -->
-        <img src="images/dice1.png" alt="Dado 1" class="dice">
-        <img src="images/dice2.png" alt="Dado 2" class="dice">
-        <img src="images/dice3.png" alt="Dado 3" class="dice">
-        <img src="images/dice4.png" alt="Dado 4" class="dice">
-        <img src="images/dice5.png" alt="Dado 5" class="dice">
-        <img src="images/dice6.png" alt="Dado 6" class="dice">
-      </div>
-
-      <div class="controls">
-        <button id="roll">🎲 Tirar Dados</button>
-        <button id="hold">✅ Plantarse</button>
-      </div>
-
-      <p class="message">Turno del Jugador 1</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Farkle - Proyecto Web</p>
-  </footer>
 </body>
 </html>
