@@ -16,6 +16,8 @@
         };
 
         product.name = 'cotton socks';
+        
+        // dot notation
         console.log(product.name)
 
         product.newProperty = true;
@@ -23,6 +25,27 @@
 
         // para saber que tipo de objeto es.
         console.log(typeof product);
+
+        const product2 = {
+            name: 'tshirt',
+            ['delivery-time']: '1 day',
+            // podemos añadir un objeto dentro de un objeto
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            // tambien podemos incluir funciones dentro del objeto ya que las funciones son solo otro tipo de valor en javascript
+            fun: function function1(){
+                console.log('function inside object')
+            }
+        };
+
+        // Otra forma de acceder a los atributos del objeto con bracket notation en
+        // Es util porque podemos usar palabras que incluyan simbolos como -
+        console.log(product2['delivery-time']);
+
+        // para acceder a los objetos dentro de objetos usamos las tecnicas anteriores
+        console.log(product2.rating.stars)
 
 
     </script>
