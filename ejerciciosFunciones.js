@@ -19,6 +19,8 @@ function convertToFahrenheit(celsius){
 
 convertToFahrenheit(36.5);
 
+
+
 function convertToCelsius(fahrenheit){
     let result = (fahrenheit -32)* 5/9;
     return result;
@@ -26,4 +28,16 @@ function convertToCelsius(fahrenheit){
 
 convertToCelsius(100);
 
+
+function convertTemperature(degrees,unit){
+    if(unit === 'C'){
+        convertToFahrenheit(degrees);
+    }
+    else if(unit === 'F'){
+        convertToCelsius(degrees);
+    }
+    else{
+        console.log('Incorrect unit, select C or F')
+    }
+} 
 
