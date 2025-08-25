@@ -82,43 +82,47 @@
 
         function playGame(playerChoice){
             const pcMove = pickComputerMove();
+            let result = '';
 
             if(playerChoice === 'Rock'){
                 if(pcMove === 'Rock'){
-                    message.textContent = `Computer played ${pcMove}. Draw`;
+                    result = 'Draw';
                 }
                 else if(pcMove === 'Paper'){
-                    message.textContent = `Computer played ${pcMove} Computer wins.`;
+                    result = 'Computer wins';
                 }
                 else{
-                    message.textContent = `Computer played ${pcMove}. Player wins.`;
+                    result = 'Player wins';
                     alert('You win!')
                 }   
             }
             else if(playerChoice === 'Paper'){
                 if(pcMove === 'Rock'){
-                    message.textContent = `Computer played ${pcMove}. Player wins.`;
+                    result = 'Player wins';
+                    alert('You win!');
                 }
                 else if(pcMove === 'Paper'){
-                    message.textContent = `Computer played ${pcMove}. Draw`;
+                    result = 'Draw';
                 }
                 else{
-                    message.textContent =  `Computer played ${pcMove} Computer wins.` ;
-                    alert('You win!')
+                    result = 'Computer wins';
                 }
             }
             else{
                 if(pcMove === 'Rock'){
-                    message.textContent = `Computer played ${pcMove} Computer wins.`;
+                    result = 'Computer wins';
                 }
                 else if(pcMove === 'Paper'){
-                    message.textContent = `Computer played ${pcMove}. Player wins.`;
+                    result = 'Player wins';
+                    alert('You win!');
                 }
                 else{
-                    message.textContent = `Computer played ${pcMove}. Draw` ;
-                    alert('You win!')
+                    result = 'Draw';
                 }
             }
+
+            message.textContent = `Computer played ${pcMove}, ${result}.`;
+
         }        
         
     </script>
