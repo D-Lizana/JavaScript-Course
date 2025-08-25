@@ -58,3 +58,12 @@ switch(x){
         console.log(2);
         break;
 }
+
+
+
+// Operador ternario: Es una simplificacion de un if-else
+
+true ? 'truth' : 'lie'
+
+// Se puede guardar en una constante
+const result = true ? 'truth' : 'lie'
