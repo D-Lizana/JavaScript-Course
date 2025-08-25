@@ -5,26 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .red-button{
-            background-color: red;
-            color: white;
-            border: none;
+        .pcplay{
+            color: red;
         }
 
-        .yellow-button{
-            background-color: yellow;
+        h2{
+            text-align: center;
         }
+
     </style>
 </head>
 <body>
-    <button title="Good job!" class="red-button" 
-    onclick="
-            alert('Good job!')
-        ">
-        hello
-    </button>
     
-    <p>Paragraph of <button class="yellow-button">hello</button> text</p>
+
+    <h2>Rock, Paper, Scissors</h2>
+
+    <div>
+
+        <button onclick="
+        const randomNumber = Math.random();
+        let pcMove = '';
+        let message = document.querySelector('.message');
+
+
+        if(randomNumber >= 0 && randomNumber < 1/3){
+            pcMove = 'Rock';
+            pcplay.textContent = 'Pc played Rock';
+        }
+        else if(randomNumber >= 1/3 && randomNumber < 2/3){
+            pcMove = 'Paper';
+            pcplay.textContent = 'Pc played Paper';
+        }
+        else if(randomNumber >= 2/3 && randomNumber < 1){
+            pcMove = 'Scissors';
+            pcplay.textContent = 'Pc played Scissors';
+        }
+
+        if(pcMove === 'Rock'){
+            message.textContent = 'Computer played ${Rock}. Draw';
+        }
+        else if(pcMove === 'Paper'){
+            message.textContent = 'Computer wins.';
+        }
+        else{
+            message.textContent = 'Player wins.';
+        }
+
+
+        ">Rock</button>
+
+        <button onclick="
+        const randomNumber = Math.random();
+        let pcMove = '';
+        let message = document.querySelector('.message');
+
+
+        if(randomNumber >= 0 && randomNumber < 1/3){
+            pcMove = 'Rock';
+            pcplay.textContent = 'Pc played Rock';
+        }
+        else if(randomNumber >= 1/3 && randomNumber < 2/3){
+            pcMove = 'Paper';
+            pcplay.textContent = 'Pc played Paper';
+        }
+        else if(randomNumber >= 2/3 && randomNumber < 1){
+            pcMove = 'Scissors';
+            pcplay.textContent = 'Pc played Scissors';
+        }
+
+        if(pcMove === 'Rock'){
+            message.textContent = 'Computer played ${Rock}. Draw';
+        }
+        else if(pcMove === 'Paper'){
+            message.textContent = 'Computer wins.';
+        }
+        else{
+            message.textContent = 'Player wins.';
+        }
+
+
+        ">Paper</button>
+
+        <button onclick="
+        const randomNumber = Math.random();
+        let pcMove = '';
+        let message = document.querySelector('.message');
+        
+
+        if(randomNumber >= 0 && randomNumber < 1/3){
+            pcMove = 'Rock';
+            
+        }
+        else if(randomNumber >= 1/3 && randomNumber < 2/3){
+            pcMove = 'Paper';
+            
+        }
+        else if(randomNumber >= 2/3 && randomNumber < 1){
+            pcMove = 'Scissors';
+        
+        }
+
+        if(pcMove === 'Rock'){
+            message.textContent = 'Computer played ${Rock}. Draw';
+        }
+        else if(pcMove === 'Paper'){
+            message.textContent = 'Computer wins.';
+        }
+        else{
+            message.textContent = 'Player wins.';
+        }
+
+
+        ">Scissors</button>
+
+    </div>
+    
+
+
+
+
+    <p class="pcplay"></p>    
+    <p class="message">Player Wins</p>
+
+
+
 
     <script>
         alert('Hello')
