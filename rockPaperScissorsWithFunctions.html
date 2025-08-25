@@ -34,62 +34,23 @@
     <div>
 
         <button onclick="
-        let message = document.querySelector('.message');
+        
+        playGame('Rock');
 
-
-        const pcMove = pickComputerMove();
-
-        if(pcMove === 'Rock'){
-            message.textContent = `Computer played ${pcMove}. Draw`;
-        }
-        else if(pcMove === 'Paper'){
-            message.textContent = `Computer played ${pcMove} Computer wins.`;
-        }
-        else{
-            message.textContent = `Computer played ${pcMove}. Player wins.`;
-            alert('You win!')
-        }
         ">Rock</button>
 
 
         <button onclick="
-        
-        let message = document.querySelector('.message');
 
+        playGame('Paper');
 
-        pickComputerMove();
-
-        if(pcMove === 'Rock'){
-            message.textContent = `Computer played ${pcMove}. Player wins.`;
-            alert('You win!')
-        }
-        else if(pcMove === 'Paper'){
-            message.textContent =  `Computer played ${pcMove}. Draw`; 
-        }
-        else{
-            message.textContent = `Computer played ${pcMove} Computer wins.`;
-        }
         ">Paper</button>
 
 
         <button onclick="
         
-        
-        let message = document.querySelector('.message');
-        
+        playGame('Scissors')
 
-        pickComputerMove();
-
-        if(pcMove === 'Rock'){
-            message.textContent = `Computer played ${pcMove} Computer wins.`; 
-        }
-        else if(pcMove === 'Paper'){
-            message.textContent = `Computer played ${pcMove}. Player wins.`; 
-            alert('You win!')
-        }
-        else{
-            message.textContent = `Computer played ${pcMove}. Draw`;
-        }
         ">Scissors</button>
 
     </div>
@@ -99,6 +60,7 @@
 
     <script>
         alert('Hello')
+        let message = document.querySelector('.message');
 
 
         function pickComputerMove(){
@@ -117,6 +79,47 @@
 
             return pcMove;
         }
+
+        function playGame(playerChoice){
+            const pcMove = pickComputerMove();
+
+            if(playerChoice === 'Rock'){
+                if(pcMove === 'Rock'){
+                    message.textContent = `Computer played ${pcMove}. Draw`;
+                }
+                else if(pcMove === 'Paper'){
+                    message.textContent = `Computer played ${pcMove} Computer wins.`;
+                }
+                else{
+                    message.textContent = `Computer played ${pcMove}. Player wins.`;
+                    alert('You win!')
+                }   
+            }
+            else if(playerChoice === 'Paper'){
+                if(pcMove === 'Rock'){
+                    message.textContent = `Computer played ${pcMove}. Player wins.`;
+                }
+                else if(pcMove === 'Paper'){
+                    message.textContent = `Computer played ${pcMove}. Draw`;
+                }
+                else{
+                    message.textContent =  `Computer played ${pcMove} Computer wins.` ;
+                    alert('You win!')
+                }
+            }
+            else{
+                if(pcMove === 'Rock'){
+                    message.textContent = `Computer played ${pcMove} Computer wins.`;
+                }
+                else if(pcMove === 'Paper'){
+                    message.textContent = `Computer played ${pcMove}. Player wins.`;
+                }
+                else{
+                    message.textContent = `Computer played ${pcMove}. Draw` ;
+                    alert('You win!')
+                }
+            }
+        }        
         
     </script>
 
