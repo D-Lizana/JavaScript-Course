@@ -19,4 +19,11 @@ function convertToFahrenheit(celsius){
 
 convertToFahrenheit(36.5);
 
+function convertToCelsius(fahrenheit){
+    let result = (fahrenheit -32)* 5/9;
+    return result;
+}
+
+convertToCelsius(100);
+
 
