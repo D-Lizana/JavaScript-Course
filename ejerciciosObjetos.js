@@ -30,4 +30,25 @@ function comparePrice(producto1, producto2){
 }
 
 
+// Ejercicio 2
+
+
+function isSameProduct(producto1, producto2){
+    if(producto1.precio == producto2.precio && producto1.name === producto2.name){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+let string = 'FRASE PARA CONVERTIR';
+string.toLowerCase();
+console.log(string)
+
+
+let palabra = 'hola';
+let repetido = palabra.repeat(3);
+console.log(repetido);
+
 
