@@ -67,14 +67,16 @@
 
     <script>
         alert('Hello')
-        let message = document.querySelector('.message');
-        let scoreMessage = document.querySelector('.scoreMessage');
 
-        const score = {
+        const score = JSON.parse(localStorage.getItem('saveScore')) || {
             wins: 0,
             losses: 0,
             ties: 0
         };
+        
+        let message = document.querySelector('.message');
+        let scoreMessage = document.querySelector('.scoreMessage');
+        updateScoreMessage();
 
 
         function pickComputerMove(){
@@ -100,8 +102,15 @@
             score.ties = 0;
 
             message.textContent = 'Score reseted';
-            scoreMessage.textContent = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`
+            updateScoreMessage();
+            localStorage.setItem('saveScore', JSON.stringify(score));
         }   
+
+
+        function updateScoreMessage(){
+            scoreMessage.textContent = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`;
+        }
+
 
         function playGame(playerChoice){
             const pcMove = pickComputerMove();
@@ -154,8 +163,8 @@
             }
 
             message.textContent = `Computer played ${pcMove}, ${result}.`;
-            scoreMessage.textContent = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`;
-
+            updateScoreMessage();
+            localStorage.setItem('saveScore', JSON.stringify(score));
         }        
         
     </script>

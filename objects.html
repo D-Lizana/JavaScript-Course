@@ -47,6 +47,21 @@
         // para acceder a los objetos dentro de objetos usamos las tecnicas anteriores
         console.log(product2.rating.stars)
 
+        // ahora para acceder al valor de la funcion dentro de un objeto, simplemente llamamos al método del objeto
+        product2.fun();
+
+
+        // Ahora vamos a ver JSON (JavaScript Object Notation)
+
+        // Para convertir el objeto a formato JSON, pero no trabaa con las funciones
+        const jsonString = JSON.stringify(product2);
+
+        // Para pasar de string a JSON
+        JSON.parse(jsonString);
+
+        
+
+
 
     </script>
 
