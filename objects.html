@@ -59,8 +59,42 @@
         // Para pasar de string a JSON
         JSON.parse(jsonString);
 
-        
 
+        // Para guardar informacion en local:
+
+        localStorage.setItem('nombreDelArchivo','String que vamos a guardar');
+        //Para recuperar el archivo
+        localStorage.getItem('nombreDelArchivo');
+
+        // para borrar el archivo
+        localStorage.removeItem('nombreDelArchivo');
+
+
+
+        // Los objetos son solo referencias en la memoria del ordenador
+        const objeto1 = {
+            mensage: 'hola'
+        };
+
+        // cuando copiamos un objeto, en realidad solo estamos copiando la referencia a ese punto en la memoria (Copy By Reference)
+        // asi no gastamos mas memoria al designar nuevos objetos
+        const objeto2 = objeto1;
+
+        objeto1.mensage = 'Cambio';
+        // Se puede cambiar el mensaje dentro del objeto aunque el objeto sea const, ya que lo que no puede cambiar es la referencia a la memoria, pero si el contenido
+        // si llamamos a objeto2 tambien se habra realizado el cambio porque la referencia es la misma
+
+        const objeto3 = {
+            mensaje: 'Cambio',
+            precio: 500
+        }
+
+        // no se pueden comparar objetos, solo sus atributos internos. Por eso el resultado es falso
+        console.log(objeto2 === objeto3)
+
+        // const mensaje = objeto3.mensaje;
+        // con la desestructuracion podemos guardar en variables las propiedades del objeto
+        const {mensaje, precio} = objeto3;
 
 
     </script>
