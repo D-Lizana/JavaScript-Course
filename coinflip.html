@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="Heads" onclick="
+            guess = 'heads';
+            coinFlip(guess);
+        ">heads</button>
+
+
+    <button class="Tails" onclick="
+            guess = 'tails';
+            coinFlip(guess);
+        ">tails</button>
+
+    <h2 class="score">Wins: 0, Losses: 0</h2>
+
+    <script>
+        let savedScore = localStorage.getItem('score')
+
+        const score = JSON.parse(savedScore) || {
+            wins: 0,
+            losses: 0
+        }
+
+        let scoreMessage = document.querySelector('.score');
+        updateScore();
+
+        let guess = '';
+
+        function updateScore(){
+            scoreMessage.textContent = `Wins: ${score.wins}, Losses: ${score.losses}`;
+        }
+
+        function coinFlip(guess){
+            let result = '';
+            const flip = Math.random()
+
+            if(flip <0.5){
+                result = 'heads'
+            }
+            else{
+                result = 'tails'
+            }
+
+            if(guess === result){
+                score.wins ++;
+                alert('You win')
+            }
+            else{
+                score.losses ++;
+                alert('You lose')
+            }
+
+            updateScore()
+            localStorage.setItem('score',JSON.stringify(score))
+        }
+
+
+    </script>
+    
+</body>
+</html>
