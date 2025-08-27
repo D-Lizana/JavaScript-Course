@@ -7,6 +7,7 @@
 </head>
 <body>
 
+    <!-- Ejercicio 1 -->
     <button>Ejercicio 1</button>
 
     <button class="boton2">Ejercicio 2</button>
@@ -26,6 +27,23 @@
 
 
 
+    <!-- Ejercicio 2 --> 
+
+    <input class="name-input" type="text" placeholder="Enter your name:" onkeydown="
+        if(event.key === 'Enter'){
+            showName();
+        }
+    ">
+
+    <button onclick="
+        showName();
+    ">Submit</button>
+
+    <p class="name-p"></p>
+
+
+
+
 
     <script>
         const boton = document.querySelector('button')
@@ -33,6 +51,13 @@
 
         let boton2 = document.querySelector('.boton2')
         boton2.innerHTML = 'Completado';
+
+        function showName(){
+            const nameInput = document.querySelector('.name-input')
+
+            const name = document.querySelector('.name-p')
+            name.innerHTML = `Your name is ${nameInput.value}.`
+        }
 
     </script>
 
