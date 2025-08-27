@@ -162,7 +162,7 @@
                 }
             }
 
-            message.textContent = `Computer played ${pcMove}, ${result}.`;
+            message.textContent = `You played ${playerChoice}, Computer played ${pcMove}, ${result}.`;
             updateScoreMessage();
             localStorage.setItem('saveScore', JSON.stringify(score));
         }        
