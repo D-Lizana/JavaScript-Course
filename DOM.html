@@ -20,7 +20,10 @@
     <p>Order under $40 = +$10 shipping</p>
     <p>Order over $40 = FREE shipping</p>
 
-    <input class='cost-input' type="number" placeholder="Cost of order">
+    <input class='cost-input' type="number" placeholder="Cost of order" onkeydown="
+        costKeyDown();
+    ">
+
     <button class="calculate-button" onclick="
         calculatePrice();
     ">Calculate</button>
@@ -46,6 +49,12 @@
             }
             
             finalPriceText.textContent = `Total cost: $${cost}`;
+        }
+
+        function costKeyDown(){
+            if(event.key === 'Enter'){
+                calculatePrice();
+            }
         }
 
 
