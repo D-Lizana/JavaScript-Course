@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>Ejercicio 1</button>
+
+    <button class="boton2">Ejercicio 2</button>
+
+
+    <button class="heads" onclick="
+        const game = document.querySelector('.game');
+        game.textContent = 'You chose: heads'
+    ">heads</button>
+        
+    <button class="tails" onclick="
+        const game = document.querySelector('.game');
+        game.textContent = 'You chose: tails'
+    ">tails</button>
+
+    <p class="game"></p>
+
+
+
+
+    <script>
+        const boton = document.querySelector('button')
+        console.log(boton)
+
+        let boton2 = document.querySelector('.boton2')
+        boton2.innerHTML = 'Completado';
+
+    </script>
+
+
+    
+</body>
+</html>
