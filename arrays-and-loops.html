@@ -4,20 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body{
+            background-color: beige;
+            font-family: arial;
+        }
+
+        .tabla{
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            margin-bottom: 5px;
+            column-gap: 5px;
+            row-gap: 5px;
+        }
+
+        .add-button{
+            background-color: green;
+            color: white;
+        }
+
+        .delete-button{
+            background-color: red;
+            color: white;
+            padding: 5px;
+        }
+
+        .input-tarea, .input-fecha{
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+
+    </style>
+
+
+
+
 </head>
 <body>
     
     <p>Lista:</p>
+    <div class="tabla">
+        <input class="input-tarea" type="text" placeholder="Tarea:">
+        <input class="input-fecha" type="date">
 
-    <input class="input-tarea" type="text" placeholder="Tarea:">
-    <input class="input-fecha" type="date">
-
-    <button class="add-button" onclick="
-        crearTarea()
+        <button class="add-button" onclick="
+            crearTarea()
+        ">Add</button>
+    </div>
     
-    ">Add</button>
 
-    <div class="lista-tareas"></div>
+    <div class="lista-tareas tabla"></div>
 
 
     
@@ -70,14 +108,13 @@
                 const fecha = tareaObject.fecha;
 
                 html += `
-                <p>
-                    ${tarea}
-                    ${fecha}
-                    <button class="delete" onclick="
+                <div>${tarea}</div>
+                <div>${fecha}</div>
+                <button class="delete-button" onclick="
                         tareas.splice(${i},1);
                         mostrarTareas();
-                    ">Delete</button>
-                </p>`;
+                ">Delete</button>
+                `;
 
             }
             document.querySelector('.lista-tareas').innerHTML = html;
