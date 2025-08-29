@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Lista:</p>
+
+    <input class="input-tarea" type="text" placeholder="Tarea:">
+    <input class="input-fecha" type="date">
+
+    <button class="add-button" onclick="
+        crearTarea()
+    
+    ">Add</button>
+
+    <div class="lista-tareas"></div>
+
+
+    
+
+
+
+
+
+    <script>
+        const array = [1,2,3]
+        array[0] = 99;
+
+        let array2 = [1, 'hello', true, {name: 'socks'}, [1,2]];
+
+        // Para ver si es un array o no
+        Array.isArray([1,2])
+
+        array.push(100)
+        console.log(array.length)
+
+        // con splice podemos quitar un valor. El primer numero es el indice donde empieza y el segundo cuantos numeros borra
+        array.splice(0,1)
+
+
+        const tareas = [];
+
+
+        function crearTarea(){
+            const inputTarea = document.querySelector('.input-tarea');
+            const inputFecha = document.querySelector('.input-fecha');
+
+            tareas.push({
+                tarea: inputTarea.value,
+                fecha: inputFecha.value
+            })
+
+            inputTarea.value = '';
+            inputFecha.value = '';
+
+            mostrarTareas()
+        }
+
+        function mostrarTareas(){
+
+            let html = '';
+
+            for(let i=0; i<tareas.length; i++){
+                const tareaObject = tareas[i];
+                const tarea = tareaObject.tarea;
+                const fecha = tareaObject.fecha;
+
+                html += `
+                <p>
+                    ${tarea}
+                    ${fecha}
+                    <button class="delete" onclick="
+                        tareas.splice(${i},1);
+                        mostrarTareas();
+                    ">Delete</button>
+                </p>`;
+
+            }
+            document.querySelector('.lista-tareas').innerHTML = html;
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
