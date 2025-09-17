@@ -54,7 +54,7 @@ function removeEggs(foods){
     let count = 0;
 
     for(let i=0; i<foods.length;i++){
-        
+
         if(foods[i] === 'egg'){
             if(count < 2){
                 count++;
@@ -69,10 +69,27 @@ function removeEggs(foods){
         }
     }
 
-    return nuevoArray;
-
+    return nuevoArray.reverse();
 }
 
+
+// Ejercicio 4
+
+for(let i=0; i<20; i++){
+
+    if(i%3===0){
+        console.log('Fizz')
+    }
+    else if(i%5===0){
+        console.log('Buzz')
+    }
+    else if(i%3===0 && i%5===0){
+        console.log('FizzBuzz')
+    }
+    else{
+        console.log(i)
+    }
+}
 
 
 
