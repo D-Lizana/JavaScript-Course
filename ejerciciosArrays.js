@@ -28,22 +28,6 @@ for(let i=0; i<palabras2.length;i++){
 }
 
 
-// Ejercicio 2
-
-function findIndex(array,palabra){
-
-    for(let i=0; i<array.length;i++){
-
-        if(array[i] === palabra){
-            return i;
-        }
-        else{
-            return -1;
-        }
-    }
-}
-
-findIndex(palabras2,'search');
 
 
 // Ejercicio 3
@@ -93,7 +77,40 @@ for(let i=0; i<20; i++){
 
 
 
+// Ejercicio 2
 
+function findIndex(array,palabra){
+
+    for(let i=0; i<array.length;i++){
+
+        if(array[i] === palabra){
+            return i;
+        }
+    }
+    return -1;
+}
+
+findIndex(palabras2,'search');
+
+
+// Ejercicio 5
+
+
+function unique(array){
+    let newArray = [];
+
+    for(let i=0; i<array.length;i++){
+        
+        let word = array[i];
+
+        if(findIndex(array,word)===-1){
+            newArray.push(word);
+        }
+    }
+
+    return newArray;
+
+}
 
 
 
