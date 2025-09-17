@@ -35,11 +35,49 @@ function findIndex(array,palabra){
     for(let i=0; i<array.length;i++){
 
         if(array[i] === palabra){
-            console.log(i);
-            break;
+            return i;
         }
         else{
-            console.log(-1);
+            return -1;
         }
     }
 }
+
+findIndex(palabras2,'search');
+
+
+// Ejercicio 3
+
+function removeEggs(foods){
+
+    let nuevoArray = []
+    let count = 0;
+
+    for(let i=0; i<foods.length;i++){
+        
+        if(foods[i] === 'egg'){
+            if(count < 2){
+                count++;
+                continue;
+            }
+            else{
+                nuevoArray.push(foods[i]);
+            }
+        }
+        else{
+            nuevoArray.push(foods[i]);
+        }
+    }
+
+    return nuevoArray;
+
+}
+
+
+
+
+
+
+
+
+
