@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Avanzadas</title>
+</head>
+<body>
+    
+<script>
+
+    function greeting(){
+        console.log('dale');
+    }
+
+    greeting()
+
+    // las funciones son valores
+    const num = 2;
+    const function1 =  function(){
+        console.log('dale');
+    };
+
+    console.log(function1);
+    console.log(typeof function1);
+
+    function1();
+
+    // Meter la funcion en un objeto
+    const object1 = {
+        num:2,
+        fun: function saludo(){
+            console.log('hola');
+        }
+    }
+
+    object1.fun();
+
+
+
+</script>
+
+
+
+</body>
+</html>
