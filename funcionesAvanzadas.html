@@ -37,6 +37,26 @@
     object1.fun();
 
 
+    // callback functions
+    function run(param){
+        param();
+    }
+
+    run(function(){
+        console.log('hello')
+    })
+
+    // toma dos valores, una funcion y el tiempo que va a esperar en milisegundos
+    setTimeOut(function(){
+        console.log('timeout')
+    }, 10000)
+
+
+    // En este caso la funcion corre cada tiempo que le digamos
+    setInterval(function(){
+        console.log('interval')
+    }, 10000)
+
 
 </script>
 
