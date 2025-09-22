@@ -36,6 +36,7 @@ const boton_add = document.querySelector('add');
 // <p class="escribir"></p>
 
 function add_to_cart(){
+    clearTimeout();
     const escribir = document.querySelector('escribir');
     escribir.innerHTML = 'Added';
 
